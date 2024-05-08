@@ -1,0 +1,153 @@
+.h1 {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 64px;
+  color: #28283D;
+}
+
+.h2 {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 44px;
+  text-align: center;
+  color: #28283D;
+}
+
+.overline {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #4D96A9;
+}
+
+.body {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: center;
+  color: #87879D;
+}
+
+.btn-1 {
+  background-color: #4D96A9;
+  border-radius: 29px;
+  border: none;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+.btn-1 span {
+  color: #8FE3F9;
+}
+
+.btn-2 {
+  background-color: #855FB1;
+  border-radius: 29px;
+  border: none;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+.btn-2 span {
+  color: #D9B8FF;
+}
+
+/*
+ * GLOBAL VARIABLES
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FAFAFA;
+}
+
+.section-num {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-num .line {
+  width: 1px;
+  height: 84px;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+  background-color: #87879D;
+}
+.section-num .number {
+  width: 56px;
+  height: 56px;
+  background-color: #FAFAFA;
+  border: 1px solid #87879d40;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 26px;
+  color: #87879D;
+}
+
+header {
+  padding: 48px 0 54px;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  padding: 0 24px;
+}
+main .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .features {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.intro {
+  margin-bottom: 64px;
+}
+.intro .title {
+  margin-top: 48px;
+}
+.intro .caption {
+  margin-top: 24px;
+  font-size: 16px;
+}
+.intro .buttons {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.intro .buttons .big {
+  padding: 16px 40px;
+}
+.intro .buttons .small {
+  padding: 16px 29px;
+}

@@ -1,0 +1,287 @@
+// Colors
+// Primary
+$shade-of-teal: #4D96A9;
+$dark-magenta: #855FB1;
+$navy: #28283D;
+$light-slate-gray: #87879D;
+$sky-blue: #8FE3F9;
+$delicate-mauve: #D9B8FF;
+$off-white: #FAFAFA;
+$white: #FFFFFF;
+
+// Typography
+@mixin h1() {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 64px;
+
+    color: $navy;
+}
+
+@mixin h2 {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 44px;
+
+    color: $navy;
+}
+
+@mixin overline() {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: $shade-of-teal;
+}
+
+@mixin body() {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+
+    color: $light-slate-gray;
+}
+
+// Buttons
+@mixin btn-1($type) {
+    @if $type == 'default' {
+        background-color: $shade-of-teal;
+    }@else if $type == 'hover' {
+        background-color: #71C0D4;
+    }
+
+    border-radius: 29px;
+
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: $white;
+
+    span {
+        color: $sky-blue;
+    }
+}
+
+@mixin btn-2($type) {
+    @if $type == 'default' {
+        background-color: $dark-magenta;
+    }@else if $type == 'hover' {
+        background-color: #B18BDD;
+    }
+
+    border-radius: 29px;
+
+
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: $white;
+
+    span {
+        color: $delicate-mauve;
+    }
+}
+
+.h1 {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 64px;
+
+    color: $navy;
+}
+
+.h2 {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 44px;
+    text-align: center;
+
+    color: $navy;
+}
+
+.overline {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: $shade-of-teal;
+}
+
+.body {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: center;
+
+    color: $light-slate-gray;
+}
+
+// Buttons
+.btn-1 {
+    background-color: $shade-of-teal;
+    border-radius: 29px;
+    border: none;
+
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: $white;
+
+    span {
+        color: $sky-blue;
+    }
+}
+
+.btn-2 {
+    background-color: $dark-magenta;
+    border-radius: 29px;
+    border: none;
+
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: $white;
+
+    span {
+        color: $delicate-mauve;
+    }
+}
+
+/*
+ * GLOBAL VARIABLES
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $off-white;
+}
+
+.section-num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .line {
+        width: 1px;
+        height: 84px;
+
+        mix-blend-mode: normal;
+        opacity: 0.25;
+        background-color: $light-slate-gray;
+
+
+    }
+
+    .number {
+        width: 56px;
+        height: 56px;
+        background-color: $off-white;
+        border: 1px solid #87879d40;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: 'Red Hat Display';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 26px;
+
+        color: $light-slate-gray;
+
+    }
+}
+
+// Body Elements
+header {
+    padding: 48px 0 54px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+main {
+    padding: 0 24px;
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+}
+
+.intro {
+    margin-bottom: 64px;
+
+    .title {
+        margin-top: 48px;
+    }
+
+    .caption {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+
+    .buttons {
+        margin-top: 32px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .big {
+            padding: 16px 40px;
+        }
+        .small {
+            padding: 16px 29px;
+        }
+    }
+}
+
+.features {
+
+}
