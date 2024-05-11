@@ -10,185 +10,110 @@ $off-white: #FAFAFA;
 $white: #FFFFFF;
 
 // Typography
-@mixin h1() {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 64px;
-    line-height: 64px;
-
-    color: $navy;
-}
-
-@mixin h2 {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 44px;
-
-    color: $navy;
-}
-
-@mixin overline() {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-
-    color: $shade-of-teal;
-}
-
-@mixin body() {
+// Mixins 
+@mixin body($color) {
     font-family: 'Red Hat Display';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
     line-height: 26px;
+    text-align: center;
 
-    color: $light-slate-gray;
+    color: $color;
+}
+
+// Headings
+@mixin heading($color) {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+    color: $color;
+    
 }
 
 // Buttons
-@mixin btn-1($type) {
-    @if $type == 'default' {
+@mixin btn($color,
+           $padding-v: 40px) {
+
+    padding: 16px $padding-v;
+    border-radius: 29px;
+    border: none;
+
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: $white;
+
+    @if $color =='green' {
         background-color: $shade-of-teal;
-    }@else if $type == 'hover' {
-        background-color: #71C0D4;
-    }
 
-    border-radius: 29px;
-
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 26px;
-
-    color: $white;
-
-    span {
-        color: $sky-blue;
-    }
-}
-
-@mixin btn-2($type) {
-    @if $type == 'default' {
+        span {
+            margin-left: 4px;
+            color: $sky-blue;
+        }
+    }@else if $color =='purple' {
         background-color: $dark-magenta;
-    }@else if $type == 'hover' {
-        background-color: #B18BDD;
+
+        span {
+            margin-left: 4px;
+            color: $delicate-mauve;
+        }
     }
 
-    border-radius: 29px;
-
-
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 26px;
-
-    color: $white;
-
-    span {
-        color: $delicate-mauve;
+    @media (hover: hover) and (pointer: fine) {
+        cursor: pointer;
+        transition: background-color .5s ease-in-out;
+        &:hover {
+            @if $color =='green' {
+                background-color: #71C0D4;
+            }@else if $color =='purple' {
+                background-color: #B18BDD;
+            }
+        }
     }
+
 }
 
+// Classes
 .h1 {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 64px;
-    line-height: 64px;
+    @include heading($navy);
+    font-size: 40px;
+    line-height: 44px;
+}
 
-    color: $navy;
+.h2,
+.h3 {
+    font-size: 32px;
+    line-height: 36px;
 }
 
 .h2 {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 44px;
-    text-align: center;
+    @include heading($navy);
+}
 
-    color: $navy;
+.h3 {
+    @include heading($off-white);
 }
 
 .overline {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
+    @include heading($shade-of-teal);
     font-size: 16px;
     line-height: 26px;
     letter-spacing: 4px;
     text-transform: uppercase;
-
-    color: $shade-of-teal;
 }
 
-.body {
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px;
-    text-align: center;
-
-    color: $light-slate-gray;
-}
-
-// Buttons
-.btn-1 {
-    background-color: $shade-of-teal;
-    border-radius: 29px;
-    border: none;
-
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
+.body1 {
+    @include body($light-slate-gray);
     font-size: 16px;
-    line-height: 26px;
-
-    color: $white;
-
-    span {
-        color: $sky-blue;
-    }
 }
 
-.btn-2 {
-    background-color: $dark-magenta;
-    border-radius: 29px;
-    border: none;
-
-    font-family: 'Red Hat Display';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 16px;
-    line-height: 26px;
-
-    color: $white;
-
-    span {
-        color: $delicate-mauve;
-    }
-}
-
-/*
- * GLOBAL VARIABLES
- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: $off-white;
+.body2 {
+    @include body($off-white);
+    font-size: 18px;
 }
 
 .section-num {
@@ -203,8 +128,6 @@ body {
         mix-blend-mode: normal;
         opacity: 0.25;
         background-color: $light-slate-gray;
-
-
     }
 
     .number {
@@ -218,14 +141,31 @@ body {
         align-items: center;
         justify-content: center;
 
-        font-family: 'Red Hat Display';
-        font-style: normal;
-        font-weight: 900;
+        @include heading($light-slate-gray);
         font-size: 16px;
         line-height: 26px;
+    }
+}
 
-        color: $light-slate-gray;
+/*
+ * GLOBAL VARIABLES
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background-color: $off-white;
+
+    picture {
+        height: max-content;
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
     }
 }
 
@@ -235,35 +175,45 @@ header {
 
     display: flex;
     justify-content: center;
+
+    a {
+        display: flex;
+    }
 }
 
-
 main {
-    padding: 0 24px;
+    overflow: hidden;
 
     .intro {
+        margin-bottom: 64px;
+        padding: 0 24px;
+
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .features {
+        margin-bottom: 64px;
+        padding: 0 24px;
+
         display: flex;
         flex-direction: column;
         gap: 64px;
     }
+
+    .experience {
+        position: relative;
+    }
 }
 
 .intro {
-    margin-bottom: 64px;
-
     .title {
         margin-top: 48px;
     }
 
     .caption {
         margin-top: 24px;
-        font-size: 16px;
     }
 
     .buttons {
@@ -271,17 +221,341 @@ main {
 
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 16px;
 
         .big {
-            padding: 16px 40px;
+            @include btn("green");
         }
+
         .small {
-            padding: 16px 29px;
+            @include btn("purple", 29px);
         }
     }
 }
 
 .features {
+    .img-container {
+        display: grid;
+        grid-template-columns: repeat(2, 151px);
+        align-items: center;
+        justify-content: center;
+        gap: 24px 25px;
 
+        img {
+            border-radius: 8px;
+        }
+    }
+
+    .inner-text-container {
+        .title {
+            margin-top: 24px;
+        }
+
+        .caption {
+            margin-top: 32px;
+        }
+    }
+}
+
+.experience {
+    .inner-text-container {
+        margin-top: -28px;
+        padding: 92px 24px 72px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        position: relative;
+        
+        .footer-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .1;
+
+            z-index: -1;
+        }
+
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: $shade-of-teal;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .title {
+            color: $off-white;
+        }
+
+        .caption {
+            margin-top: 24px;
+        }
+
+        button {
+            margin-top: 32px;
+            @include btn('purple', 40px);
+        }
+    }
+}
+
+.attribution {
+    margin: 30px 0;
+    padding: 10px 12px;
+    width: 100%;
+    background-color: $shade-of-teal;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5px;
+
+    p {
+        font-family: 'Red Hat Display';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        letter-spacing: -0.16px;
+
+        color: $white;
+
+        a {
+            color: $sky-blue;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 648px) {
+    .attribution {
+        border-radius:0 29px 29px 0;
+        width: max-content;
+        align-self: flex-start;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    // Typography
+    // Classes
+    .h1 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+
+    .h2,
+    .h3 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    .features {
+        .img-container {
+            gap: 11px;
+            grid-template-columns: repeat(4, 164px);
+        }
+    }
+
+    // Body Elements 
+    header {
+        padding-bottom: 64px;
+    }
+
+    main {
+        .intro {
+            margin-bottom: 80px;
+        }
+
+        .features {
+            margin-bottom: 80px;
+            gap: 0;
+        }
+    }
+
+    .intro {
+        .title {
+            margin-top: 72px;
+        }
+
+        .caption {
+            max-inline-size: 457px;
+        }
+
+        .buttons {
+            flex-direction: row;
+        }
+    }
+
+    .features {
+        .img-container {
+            margin-top: 67px;
+        }
+
+        .inner-text-container {
+            margin-top: 48px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .title {
+                margin-top: 16px;
+            }
+
+            .caption {
+                max-inline-size: 573px;
+            }
+        }
+    }
+
+    .experience {
+        .inner-text-container {
+            padding: 92px 0 66px;
+
+            .caption {
+                margin-top: 32px;
+                max-inline-size: 573px;
+            }
+
+            button {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    // Typography
+    // Classes
+    .h1 {
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    .body1 {
+        font-size: 18px;
+    }
+
+    // Body Elements
+    header {
+        padding: 80px 0 61px;
+    }
+
+    main {
+        .intro {
+            margin-bottom: 110px;
+            position: relative;
+        }
+
+        .features {
+            margin-bottom: 72px;
+        }
+    }
+    .intro {
+        .bg-hero-img {
+            display: none;
+        }
+
+        .bg-hero {
+            position: absolute;
+        }
+
+        .left {
+            top: 0;
+            left: -32px;
+        }
+
+        .right {
+            right: -32px;
+            bottom: 0;
+            
+        }
+
+        .title {
+            margin-top: 47px;
+        }
+
+        .caption {
+            margin-top: 34px;
+            max-inline-size: 540px;
+        }
+
+        .buttons {
+            margin-bottom: 7px;
+        }
+    }
+
+    .features {
+        .img-container {
+            margin-top: 64px;
+            grid-template-columns: repeat(4, 255px);
+            gap: 30px;
+        }
+
+        .inner-text-container {
+            margin-top: 80px;
+        }
+    }
+
+    .experience {
+        .inner-text-container {
+            padding: 116px 0 104px;
+            flex-direction: row;
+            justify-content: center;
+
+            .title {
+                text-align: left;
+            }
+
+            .caption {
+                margin-top: 0;
+                margin-left: 125px;
+                max-inline-size: 350px;
+
+                text-align: left;
+            }
+
+            button {
+                margin-top: 0;
+                margin-left: 92px;
+            }
+        }
+    }
+
+    .attribution {
+        p {
+            a {
+                font-size: 18px;
+                letter-spacing: -0.18px;
+            }
+        }
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .attribution {
+        p {
+            a {
+                cursor: pointer;
+                transition: color .5s ease-out;
+
+                &:hover {
+                    color: #71C0D4;
+                }
+            }
+        }
+    }
 }
