@@ -142,11 +142,15 @@ main .experience {
   position: relative;
 }
 
+.intro .bg-hero {
+  display: none;
+}
 .intro .title {
   margin-top: 48px;
 }
 .intro .caption {
   margin-top: 24px;
+  max-inline-size: 327px;
 }
 .intro .buttons {
   margin-top: 32px;
@@ -216,11 +220,18 @@ main .experience {
 .features .img-container img {
   border-radius: 8px;
 }
+.features .inner-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .features .inner-text-container .title {
   margin-top: 24px;
+  max-inline-size: 327px;
 }
 .features .inner-text-container .caption {
   margin-top: 32px;
+  max-inline-size: 327px;
 }
 
 .experience .inner-text-container {
@@ -256,6 +267,7 @@ main .experience {
 }
 .experience .inner-text-container .caption {
   margin-top: 24px;
+  max-inline-size: 327px;
 }
 .experience .inner-text-container button {
   margin-top: 32px;
@@ -360,12 +372,10 @@ main .experience {
   }
   .features .inner-text-container {
     margin-top: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   .features .inner-text-container .title {
     margin-top: 16px;
+    max-inline-size: 445px;
   }
   .features .inner-text-container .caption {
     max-inline-size: 573px;
@@ -408,6 +418,7 @@ main .experience {
     display: none;
   }
   .intro .bg-hero {
+    display: block;
     position: absolute;
   }
   .intro .left {
@@ -437,14 +448,19 @@ main .experience {
   .features .inner-text-container {
     margin-top: 80px;
   }
+  .features .inner-text-container .caption {
+    max-inline-size: 540px;
+  }
 
   .experience .inner-text-container {
     padding: 116px 0 104px;
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
   }
   .experience .inner-text-container .title {
     text-align: left;
+    inline-size: 350px;
   }
   .experience .inner-text-container .caption {
     margin-top: 0;
@@ -455,6 +471,7 @@ main .experience {
   .experience .inner-text-container button {
     margin-top: 0;
     margin-left: 92px;
+    align-self: center;
   }
 
   .attribution p a {

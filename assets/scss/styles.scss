@@ -208,12 +208,17 @@ main {
 }
 
 .intro {
+    .bg-hero {
+        display: none;
+    }
+
     .title {
         margin-top: 48px;
     }
 
     .caption {
         margin-top: 24px;
+        max-inline-size: 327px;
     }
 
     .buttons {
@@ -248,12 +253,18 @@ main {
     }
 
     .inner-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         .title {
             margin-top: 24px;
+            max-inline-size: 327px;
         }
 
         .caption {
             margin-top: 32px;
+            max-inline-size: 327px;
         }
     }
 }
@@ -301,6 +312,7 @@ main {
 
         .caption {
             margin-top: 24px;
+            max-inline-size: 327px;
         }
 
         button {
@@ -407,12 +419,9 @@ main {
         .inner-text-container {
             margin-top: 48px;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
             .title {
                 margin-top: 16px;
+                max-inline-size: 445px;
             }
 
             .caption {
@@ -464,12 +473,14 @@ main {
             margin-bottom: 72px;
         }
     }
+
     .intro {
         .bg-hero-img {
             display: none;
         }
 
         .bg-hero {
+            display: block;
             position: absolute;
         }
 
@@ -507,6 +518,10 @@ main {
 
         .inner-text-container {
             margin-top: 80px;
+
+            .caption {
+                max-inline-size: 540px;
+            }
         }
     }
 
@@ -515,9 +530,11 @@ main {
             padding: 116px 0 104px;
             flex-direction: row;
             justify-content: center;
+            align-items: flex-start;
 
             .title {
                 text-align: left;
+                inline-size: 350px;
             }
 
             .caption {
@@ -531,6 +548,7 @@ main {
             button {
                 margin-top: 0;
                 margin-left: 92px;
+                align-self: center;
             }
         }
     }
